@@ -1,6 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-
+var path = require('path');
 module.exports = {
 	module: {
 		rules: [
@@ -24,6 +24,11 @@ module.exports = {
 	output: {
 		publicPath: '/word_widget/',
 	},
+	// devServer: {
+	// 	contentBase: path.join(__dirname, 'dist'),
+	// 	compress: true,
+	// 	port: 9000,
+	// },
 	plugins: [
 		new HtmlWebPackPlugin({
 			template: './src/index.html',

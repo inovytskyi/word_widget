@@ -17,16 +17,24 @@ class Game extends Phaser.Game {
 		let canvas = document.querySelector('canvas');
 		let windowWidth = window.innerWidth;
 		let windowHeight = window.innerHeight;
-		if (windowHeight >= windowWidth) {
-			canvas.style.width = windowWidth + 'px';
-			canvas.style.height = windowWidth + 'px';
+		if (windowHeight > windowWidth) {
+			this.canvas.style.width = windowWidth + 'px';
+			this.canvas.style.height = windowWidth + 'px';
 		} else {
-			canvas.style.width = windowHeight + 'px';
-			canvas.style.height = windowHeight + 'px';
+			this.canvas.style.width = windowHeight + 'px';
+			this.canvas.style.height = windowHeight + 'px';
 		}
 	}
 }
 
-let game = new Game();
-window.game = game;
-// window.addEventListener('resize', game.resize, false);
+window.addEventListener('load', () => {
+	let game = new Game();
+	game.resize();
+	window.addEventListener(
+		'resize',
+		event => {
+			game.resize();
+		},
+		false
+	);
+});

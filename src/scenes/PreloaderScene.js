@@ -12,6 +12,7 @@ export default class PreloaderScene extends Phaser.Scene {
 			'assets/fonts/gothic.xml'
 		);
 		this.load.image('bg', 'assets/images/bg.jpeg');
+		this.load.image('circle', 'assets/images/circle2.png');
 	}
 
 	create() {
